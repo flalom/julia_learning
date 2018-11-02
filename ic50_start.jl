@@ -77,3 +77,12 @@ text = readline()
 #If you expect the user to type an integer, you can try to convert the return value to Int64:
 println("What...is the airspeed velocity of an unladen swallow?"); speed = readline()
 parse(Int64, speed)
+
+x != y               # x is not equal to y
+  x ≠ y                # (\ne TAB)
+  x > y                # x is greater than y
+  x < y                # x is less than y
+  x >= y               # x is greater than or equal to y
+  x ≥ y                # (\ge TAB)
+  x <= y               # x is less than or equal to y
+  x ≤ y                # (\le TAB)
