@@ -6,7 +6,7 @@ messere = "pippo cicuta minatore saldatore"
 for i in 1:2
     print("Hello how are you?? \n")
     print("Quante pila ave lu poccu? blabla??"); a = readline()
-    print(a)
+    print("Lu poccu ave $a pilas")
     end
 
 #Justify the text adding 70 spaces
