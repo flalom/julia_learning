@@ -86,3 +86,17 @@ x != y               # x is not equal to y
   x ≥ y                # (\ge TAB)
   x <= y               # x is less than or equal to y
   x ≤ y                # (\le TAB)
+
+  prefixes = "JKLMNOPQ"
+  suffix = "ack"
+
+  for letter in prefixes
+      println(letter * suffix)
+  end
+
+ a = "sjhdsjfh"
+ b = "pippolo"
+
+ for lettera in a
+     println(lettera * b)
+ end
