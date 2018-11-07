@@ -100,3 +100,13 @@ x != y               # x is not equal to y
  for lettera in a
      println(lettera * b)
  end
+
+
+ word = "banana"
+ counts = 0
+ for letter in word
+     if letter == 'a'
+         global counts += 1
+     end
+ end
+ println(counts)
