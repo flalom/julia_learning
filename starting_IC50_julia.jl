@@ -6,4 +6,4 @@ using Queryverse
 println("Function for calculation of the linear curve associated with the data points")
 data = readlines("pippo.txt")
 
-data = Queryverse. 
+data = Queryverse.readtable("pippo.txt")
