@@ -102,7 +102,7 @@ x != y               # x is not equal to y
  end
 
 
- word = "banana"
+ word = "bananaaaaaaaaaaaaaaaaahhhhhhhhhhhhdfgsdsjhjahsjahajajajhsjahjs"
  counts = 0
  for letter in word
      if letter == 'a'
