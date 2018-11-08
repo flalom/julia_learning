@@ -9,7 +9,7 @@ function LongestWord(sen::String)
     #println(sentence[index_n])
 end
 
-LongestWord("Ciao pippo sdksahdgdfgsdfhgsdfkshgfdsddkfhgdfkh come stai, come va tutto bene djhakdfjhsdfk oiweruwotidfgsjdfhgsdjhfgsdjfhgsdjfgdsjhfgsjfgdpweokudfks?")
+LongestWord("Ciao pippo come va tutto bene djhakdfjhsdfk oiweruwotidfgsjdfhgsdjhfgsdjfhgsdjfgdsjhfgsjfgdpweokudfks?")
 
 
 function LongestWord(sen::AbstractString)
@@ -51,26 +51,26 @@ LongestWord2("Ciao pippo come stai, come va tutto bene? che fai di bello!")
 
 #I have not manage to find the right answer to this problem right now, but I will think on that
 function FirstFactorial(numero::Int64)
-    
+
     number_before = collect(1:numero)
     lista = [(x) for x in number_before]
     print(lista)
 end
 
 FirstFactorial(8)
-            
+
 
 function FirstFactorial1(numero::Int64)
     return(factorial(numero))
 end
-    
+
 FirstFactorial1(8)
 
 #It is a superficial solution, I am missing how to reverse the structure
 a = []
 function FirstReverse(stringa::AbstractString)
     for x in matchall(r"\w+", stringa) #se metti uno spazio dopo la w+, la regex cambia!
-        insert!(a,1, reverse(x))#https://docs.julialang.org/en/release-0.4/stdlib/collections/?highlight=push#Base.push! this 
+        insert!(a,1, reverse(x))#https://docs.julialang.org/en/release-0.4/stdlib/collections/?highlight=push#Base.push! this
         #made the trick, but now it is printing all the process
         #the insert! takes(array, index, element)
     end
@@ -99,7 +99,7 @@ function LetterChanges(stringa::AbstractString)
             x = 'Z'
         elseif x in vowels
             uppercase(x)
-            else 
+            else
             Int(x)+1
             Char(x)
             println(x)
@@ -110,25 +110,25 @@ end
     #devo trovare il modo di matchare le lettere in alphabet e farmi dare l'index, cosi' posso sommarlo di uno
     #dovrei fare un array di match da alphabet
     #matched = [eachindex(x) for x in testo_iniziale if contains(alphabet, x)]
-    
-    #println(length(testo_iniziale))                                          
+
+    #println(length(testo_iniziale))
 
 LetterChanges("Ciao pippo come stai")
-        
+
 
 #https://gist.github.com/zemadi/11071837
 #this solution is very important but it is only for the python 3
-def LetterChanges(str): 
+def LetterChanges(str):
 	lower = str.lower()
-	  
-	newstring = ""  
+
+	newstring = ""
 	lookup = 'abcdefghijklmnopqrstuvwxyz'
 	vowels = "aeiou"
-	  
+
 	for letter in lower:
-	  if letter == "z": 
+	  if letter == "z":
 	    newstring += "A"
-	  else: 
+	  else:
 	    letter_index = lookup.index(letter)
 	    if lookup[(letter_index+1)] in vowels:
 	      vowel_set = lookup[(letter_index+1)]
@@ -136,18 +136,18 @@ def LetterChanges(str):
 	    else:
 	      newstring += lookup[(letter_index+1)]
 print newstring
-            
-            
-            
-            
-def LetterChanges(str): 
-  
+
+
+
+
+def LetterChanges(str):
+
   # our new string with the modified characters
   newString = ""
 
   # begin by looping through each character in the string
   for char in str:
-    
+
     # check if the current character is an alphabetic character
     if char.isalpha():
 
@@ -155,7 +155,7 @@ def LetterChanges(str):
       if char.lower() == 'z':
         char = 'a'
 
-      # if alphabetic character then add 1 to its ASCII value 
+      # if alphabetic character then add 1 to its ASCII value
       # by using the built-in ord function then convert back to character
       else:
         char = chr(ord(char) + 1)
@@ -168,8 +168,8 @@ def LetterChanges(str):
     newString = newString + char
 
   return newString
-       
-print LetterChanges("fun times!")  
+
+print LetterChanges("fun times!")
 
 println(Int('a'))
 
@@ -194,7 +194,7 @@ function LetterChanges2(str::AbstractString)
         for c in str
             c = c == 'z' ? 'a' : c+1 # we assume that we got only letters from 'a':'z'
             print(io, c in v ? uppercase(c) : c)
-            
+
         end
     end
 end
@@ -204,9 +204,9 @@ LetterChanges2("coderbyte")
 function SimpleAdding(num::Int64)
     #set borders with an if. Note that the first end has to be at the end of the if
     if num > 1000
-        return("The number is too big!!") 
+        return("The number is too big!!")
     end
-    
+
     for x in reverse(collect(0:num))
         sum = (x*(1+(x))/2)
         #1+1/2= 0; 2+4/2=3;3+9/2
@@ -220,21 +220,21 @@ function LetterCapitalize(str::AbstractString)
     list = [(string(uppercase(x[1])*x[2:end] * " ")) for x in matchall(r"\w+", str)]
         return(join(list))
 end
-    
+
 LetterCapitalize("i ran there last day come stai sei pazzo")
 
 #this function works fine, but the only problem is that once the interger introduced are the same, then the progrsm troll me with an error, for a reason which I do not understand at the moment
 function checknumber(num_a::Integer, num_b::Integer)
     if num_b > num_a ? print("True"):num_b < num_a print("False")
     elseif num_a == num_b
-        print(-1) 
+        print(-1)
     end
     #return(num_a+num_b)
   end
 checknumber(67,67)
 
 function TimeConvert(num::Integer)
-    hours = floor(round((num / 60), 1), 0)
+    hours = floor(round((num / 60.0), 1), 0)
     if num <= 59
         hours = 0
     end
@@ -254,7 +254,7 @@ end
 TimeConvert(63)
 
 function AlphabetSoup(stri::AbstractString)
-  
+
         lista = [x for x in split(stri, "") if x != " "]
         #Amount of letter for adding the spaces every 4 spaces
         #final = [split(x, "") for x in lista if length > 4]
@@ -271,12 +271,12 @@ function KaprekarsConstant(num::AbstractString)
         println("Performing operation...")
     else
         println("The lenght of the entered number is not big enough, minumum 4 digits")
-      end  
+      end
         values = [x for x in num]
         values = sort(values)
         values = Set(values)
         values = join(values, "")
-    
+
 return(values)
 end
 
@@ -287,5 +287,3 @@ a = collect(1:100)
 b = Set(x for x in a  if x % 2 == 0 && x % 3 == 0)
 
 function CorrectPath(str::AbstractString)
-    
-    
