@@ -2,11 +2,13 @@ using Atom.Markdown
 
 #add a variable and playing with it
 messere = "pippo cicuta minatore saldatore"
+list = []
 #making a for cycle
 for i in 1:2
     print("Hello how are you?? \n")
     print("Quante pila ave lu poccu? blabla??"); a = readline()
-    print("Lu poccu ave $a pilas")
+    append!(list, parse(Int, a))
+    print("Lu poccu ave $list pilas")
     end
 
 #Justify the text adding 70 spaces
@@ -62,7 +64,7 @@ function countdown(n)
     if n ≤ 0
         println("Blastoff!")
     else
-        print(n, " ")
+        println(n, " ")
         countdown(n-1)
     end
 end
