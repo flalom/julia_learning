@@ -1,10 +1,10 @@
 function ripetitore(num::Int, rep::Int, text::AbstractString) :: Any
     for i in 1:num
-        println("  "^(i+1), text^rep,  "  "^(i+1), text^rep)
+        println('  '^(i+1), text^rep,  '  '^(i+1), text^rep)
     end
 end
 
-#ripetitore(15, 2, "<3 ")
+#ripetitore(15, 2, '<3 ')
 
 function reverser(str::AbstractString)
     collection = collect(str)
@@ -12,24 +12,33 @@ function reverser(str::AbstractString)
         if char!== 'm'
             println(char)
         else
-            println("Mausa!")
+            println('Mausa!')
         end
     end
 end
 
-#reverser("pillmmmmaaa")
-
-function DNA_complementary(sequence::AbstractString)
+#reverser('pillmmmmaaa')
+function dna_complementary(sequence_dna::AbstractString)
+    bases = Dict('a' => 't', 'c' => 'g', 'g'=>'c', 't'=>'a')
     complementary_seq = []
-    sequence = lowercase(collect(sequence))
-    for base in sequence
-        if base == 'a'
-            append!(complementary_seq, base)
-        else
-            println("Unknown base!")
-        end
+    sequence_low = lowercase(sequence_dna)
+    for el in sequence_low
+         if el in keys(bases)
+            append!(complementary_seq, bases[el])
+         else
+            println("The base you put is not right, please re-enter the correct sequence and run it again")
+            break
+         end
     end  
+    return uppercase(join(complementary_seq, ""))
+    
 end
 
-DNA_complementary("ACTGATCGGGTTAAA")
+dna_complementary("gccttgggaattt")
 
+# to comment is ctrl + k + c
+# s::AbstractString = "Ranella"
+# for el in s
+#     println(el)
+#     println(typeof(el))
+# end
