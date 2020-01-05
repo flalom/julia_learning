@@ -34,11 +34,5 @@ function dna_complementary(sequence_dna::AbstractString)
     
 end
 
-dna_complementary("gccttgggaattt")
+dna_complementary("gccsttgggaatttAAAAAAAAAAAAAAAAAAGGGGGGGGGGGGGGGGGGGG")
 
-# to comment is ctrl + k + c
-# s::AbstractString = "Ranella"
-# for el in s
-#     println(el)
-#     println(typeof(el))
-# end
