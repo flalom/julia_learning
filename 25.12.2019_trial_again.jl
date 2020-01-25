@@ -1,4 +1,5 @@
 function ripetitore(num::Int, rep::Int, text::AbstractString) :: Any
+    """This function makes small easy drawings"""
     for i in 1::num
         println("  "^(i+1), text^rep,  "  "^(i+1), text^rep)
     end
@@ -7,6 +8,7 @@ end
 #ripetitore(15, 2, "<3 ")
 
 function reverser(str::AbstractString)
+    """This easy function reverses the strings"""
     collection = collect(str)
     for char in reverse(collection)
         if char!== "m"
@@ -18,7 +20,9 @@ function reverser(str::AbstractString)
 end
 
 #reverser("pillmmmmaaa")
+
 function dna_complementary(sequence_dna::AbstractString)
+    """Simple function to genrate reverese complementary sequence"""
     bases = Dict("a" :: "t", "c" :: "g", "g"::"c", "t"::"a")
     complementary_seq = []
     sequence_low = lowercase(sequence_dna)
@@ -33,9 +37,10 @@ function dna_complementary(sequence_dna::AbstractString)
     return uppercase(join(complementary_seq, ""))   
 end
 
-dna_complementary("gccttgggaatttAAAAAAAAAAAAAAAAAAGGGGGGGGGGGGGGGGGGGG")
+#dna_complementary("gccttgggaatttAAAAAAAAAAAAAAAAAAGGGGGGGGGGGGGGGGGGGG")
 
 function traslatore_dna_in_rna(string_dna :: AbstractString) ::AbstractString
+    """Simple function to generate RNA starting from DNA sequences"""
     bases = Dict("a" :: "t", "c" :: "g", "g"::"c", "t"::"T")
     println("You provided a sequence of ", length(string_dna))
     sequence_low_rna = lowercase(string_dna)
@@ -46,9 +51,10 @@ function traslatore_dna_in_rna(string_dna :: AbstractString) ::AbstractString
     return uppercase(join(complementary_seq, ""))   
 end
 
-traslatore_dna_in_rna("gccttgggaattttgcAAAAAAAAAAAAAAAAAAGGGGGGGGGGGGGGGGGGGGTTTTTTTTTTTTTTTTT")
+#traslatore_dna_in_rna("gccttgggaattttgcAAAAAAAAAAAAAAAAAAGGGGGGGGGGGGGGGGGGGGTTTTTTTTTTTTTTTTT")
 
-function translator_from_dna(rna_seq :: AbstractString)
+function translator_from_rna(rna_seq :: AbstractString)
+    """This function provided a RNA sequence will generate the protein sequence starting from the first encountered AUG"""
     traslation = []
     table = Dict(
         "AUA"::"I", "AUC"::"I", "AUU"::"I", "AUG"::"M", 
@@ -80,5 +86,4 @@ function translator_from_dna(rna_seq :: AbstractString)
     return join(traslation, "")
 end
 
-translator_from_dna("UUUAUGGCCAUGGCGCCCAGAACUGAGAUCAAUAGUACCCGUAUUAACGGGUGAUUCACAUGUAAA")
-#MAMAPRTEINSTRING
+translator_from_rna("UUUAUGGCCAUGGCGCCCAGAACUGAGAUCAAUAGUACCCGUAUUAACGGGUGAUUCACAUGUAAA")
